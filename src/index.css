@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply px-0 lg:px-[25%];
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text-field .MuiInputBase-input {
+  height: 40px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+.MuiInput-underline:after {
+  border-bottom: 2px solid #ff2e94 !important;
+}
+.MuiIconButton-colorInherit {
+  color: #ff2e94 !important;
+}
+.MuiSelect-root {
+  width: 72px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  color: #ff2e94 !important;
+}
+.MuiSelect-root > div {
+  color: rgba(0, 0, 0, 0.6) !important;
+  text-align: left !important;
+}
+.MuiListItem-root.Mui-selected {
+  background-color: #ff2e94 !important;
+  color: #ffffff !important;
+}
+.MuiButton-outlinedPrimary {
+  border: 1px solid rgba(255, 46, 148, 0.5) !important;
+}
+.table-resultat {
+  max-width: 100%;
+  overflow-x: scroll;
+  border-radius: 6px 6px 0px 0px;
+}
+.table-resultat::-webkit-scrollbar {
+  display: none;
+}
+.table-resultat table {
+  border: 1px solid rgba(255, 46, 148, 0.2);
+  border-collapse: collapse;
+}
+.table-resultat th {
+  background-color: #ff2e94;
+  color: white;
+  border: 1px solid rgba(255, 46, 148, 0.2);
+  border-collapse: collapse;
+}
+.table-resultat td {
+  border: 1px solid rgba(255, 46, 148, 0.2);
+  border-collapse: collapse;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+}
+.MuiPaper-elevation2 {
+  border-radius: 6px !important;
+  border-top: 1px solid rgba(255, 46, 148, 0.2);
+}
+.table-objets .MuiTableCell-root {
+  border-bottom: 1px solid rgba(255, 46, 148, 0.2) !important;
+}
+.table-objet tr {
+  border-left: none;
+  border-right: none;
+}
+.MTablePaginationInner-root-14 .MuiButton-contained.Mui-disabled {
+  background-color: #ff2e94 !important;
+  color: white !important;
 }

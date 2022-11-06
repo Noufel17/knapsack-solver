@@ -131,7 +131,7 @@ function App() {
           disabled={error || !objets.length || solving}
           variant='outlined'
           startIcon={<Calculate />}
-          className='!text-primary-pink !mt-4'
+          className='!text-primary-pink !my-4'
           sx={{
             borderColor: "#FF2E94",
             color: "#FF2E94",

@@ -36,6 +36,8 @@
 }
 .MuiButton-outlinedPrimary {
   border: 1px solid rgba(255, 46, 148, 0.5) !important;
+  border-radius: 4px !important;
+  padding: 16px 8px 8px 16px !important;
 }
 .table-resultat {
   max-width: 100%;
@@ -76,4 +78,7 @@
 .MTablePaginationInner-root-14 .MuiButton-contained.Mui-disabled {
   background-color: #ff2e94 !important;
   color: white !important;
+}
+.MuiTableRow-root .MuiTableRow-head {
+  border-radius: 6px !important;
 }

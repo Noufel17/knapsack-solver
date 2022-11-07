@@ -38,13 +38,17 @@ function App() {
   const columns = [
     {
       field: "weight",
-      title: "Poids ( Wi )",
-      render: (rowData) => <div className='text-center'>{rowData.weight}</div>,
+      title: "Poids (Wi)",
+      render: (rowData) => (
+        <div className='text-center text-sm sm:text-xl'>{rowData.weight}</div>
+      ),
     },
     {
       field: "value",
-      title: "Valeur ( Vi )",
-      render: (rowData) => <div className='text-center'>{rowData.value}</div>,
+      title: "Valeur (Vi)",
+      render: (rowData) => (
+        <div className='text-center text-sm sm:text-bold'>{rowData.value}</div>
+      ),
     },
   ];
   const CapacityTextField = styled(TextField)({

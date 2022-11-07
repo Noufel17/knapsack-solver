@@ -21,9 +21,9 @@ export default function KnapsackTable({ P, maxCapacity, nbObjects }) {
           </tbody>
         </table>
       </div>
-      <h2 className='text-primary-pink font-bold sm:text-3xl text-2xl mb-60'>
+      <h2 className='text-primary-pink font-bold sm:text-3xl text-2xl'>
         Le profit maximum est :
-        {P[Number(nbObjects) - 1][Number(maxCapacity) - 1]}
+        {P[Number(P.length) - 1][Number(P[1].length) - 1]}
       </h2>
     </>
   );

@@ -13,29 +13,45 @@ function App() {
   const [solving, setSolving] = useState(false);
   const [capacity, setCapacity] = useState("");
   const [error, setError] = useState(false);
+  const [tokenObjects, setTokenObjects] = useState([]);
+  const [P, setP] = useState([]);
   const [objets, setObjets] = useState([
     {
+      name: "obj1",
       weight: 2,
       value: 5,
     },
     {
+      name: "obj2",
       weight: 1,
       value: 3,
     },
     {
+      name: "obj3",
       weight: 4,
       value: 7,
     },
     {
+      name: "obj4",
       weight: 3,
       value: 1,
     },
     {
+      name: "obj5",
       weight: 5,
       value: 6,
     },
   ]);
   const columns = [
+    {
+      field: "name",
+      title: "Objet",
+      render: (rowData) => (
+        <div className='text-center text-sm sm:text-xl font-bold'>
+          {rowData.name}
+        </div>
+      ),
+    },
     {
       field: "weight",
       title: "Poids (Wi)",
@@ -109,7 +125,7 @@ function App() {
                 ? {
                     onRowAdd: (newRow) =>
                       new Promise((resolve, reject) => {
-                        if (newRow.weight && newRow.value) {
+                        if (newRow.weight && newRow.value && newRow.name) {
                           setObjets([...objets, newRow]);
                           setTimeout(() => resolve(), 500);
                         } else {
@@ -161,6 +177,12 @@ function App() {
             } else {
               setError(false);
               setCapacity(value);
+              const { table, tokenObjects } = knapsack(
+                [{}, ...objets],
+                Number(value) + 1
+              );
+              setP(table);
+              setTokenObjects(tokenObjects);
               setSolving(true);
               setTimeout(
                 () =>
@@ -204,10 +226,18 @@ function App() {
         )}
         {solving && (
           <KnapSackTable
-            P={knapsack([{}, ...objets], parseInt(capacity) + 1)}
+            P={P}
             nbObjects={objets.length}
             maxCapacity={parseInt(capacity)}
           />
+        )}
+        {solving && (
+          <div className=' mb-60 text-2xl text-primary-pink font-bold sm:text-3xl'>
+            Les objets selectionnées :
+            {tokenObjects.map((object, index) => (
+              <span key={index}> {object.name} </span>
+            ))}
+          </div>
         )}
       </div>
     </Fragment>

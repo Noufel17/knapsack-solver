@@ -40,14 +40,18 @@ function App() {
       field: "weight",
       title: "Poids (Wi)",
       render: (rowData) => (
-        <div className='text-center text-sm sm:text-xl'>{rowData.weight}</div>
+        <div className='text-center text-sm sm:text-xl font-bold'>
+          {rowData.weight}
+        </div>
       ),
     },
     {
       field: "value",
       title: "Valeur (Vi)",
       render: (rowData) => (
-        <div className='text-center text-sm sm:text-bold'>{rowData.value}</div>
+        <div className='text-center text-sm sm:text-xl font-bold'>
+          {rowData.value}
+        </div>
       ),
     },
   ];
